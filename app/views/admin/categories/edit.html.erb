@@ -1,0 +1,5 @@
+<h1>Editing categories</h1>
+
+<%= nested_form_for([current_admin, @category], :url => admin_category_path(:id => @category.id), :html => { :multipart => true }, :method => "PUT") do |f| %>
+ <%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>

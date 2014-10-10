@@ -1,0 +1,7 @@
+<h1>Editing Product</h1>
+<%= link_to 'Back', admin_products_path, :class => "pull-right  btn btn-primary" %>
+
+<%= nested_form_for([current_admin, @product], :url => admin_product_path(:id => @product.id), :html => { :multipart => true }, :method => "PUT") do |f| %>
+ <%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>
+

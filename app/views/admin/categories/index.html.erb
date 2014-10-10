@@ -1,0 +1,25 @@
+<h1>Listing categories</h1>
+<%= link_to 'Add More', new_admin_category_path, :class => "pull-right btn btn-primary" %>
+<div class="table-responsive">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+        </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |categorie| %>
+
+      <tr>
+        <td><%= categorie.name %></td>
+     
+        <td><%= link_to 'Show',  admin_category_path(categorie.id) %></td>
+        <td><%= link_to 'Edit', edit_admin_category_path(categorie.id) %></td>
+        <td><%= link_to 'Destroy', admin_category_path(categorie.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
