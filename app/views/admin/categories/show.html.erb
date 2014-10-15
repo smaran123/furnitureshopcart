@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <table class = "table table-striped">
   <tr>
 
@@ -21,4 +22,38 @@
 
   <% end %>
 </table>
+=======
+
+<div class="table-responsive">
+<table class="table">
+<%= link_to 'Back', admin_categories_path, :class => "pull-right  btn btn-primary" %>
+  <thead>
+    <tr>
+      
+      <th>Name</th>
+      <th>Description</th>
+      <!-- <th>Image url</th> -->
+      <th>Price</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      </tr>
+  </thead>
+
+
+  <tbody>
+<% @category.products.each do |product| %>
+   <tr>
+   
+      <td><%= product.name %></td>
+	  <td><%= product.description %></td>
+	  <td><%= product.price %></td>
+  </tr>
+  <% end %>
+
+  </tbody>
+</table>
+</div>
+
+>>>>>>> 6e2597e2f2ec1a1b7c9f6e2fde504f1d5a232b9e
 
