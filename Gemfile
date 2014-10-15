@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use mysql as the database for Active Record
+group :production do
+  gem 'pg'
+end
 gem 'mysql2'
 
 # Use SCSS for stylesheets
