@@ -1,3 +1,24 @@
-<% @category.products.each do |product| %>
-  <span><%= product.name %></span>
-<% end %>
+<table class = "table table-striped">
+  <tr>
+
+    <th>Name</th>
+    <th> Description</th>
+    <th>Price</th>
+
+
+  </tr>
+
+
+  <% @category.products.each do |product| %>
+    <tr>
+
+      <td><%= product.name.capitalize %></td>
+      <td><%=  product.description.capitalize%></td>
+      <td><%=  product.price%></td>
+    </tr>
+
+
+
+  <% end %>
+</table>
+

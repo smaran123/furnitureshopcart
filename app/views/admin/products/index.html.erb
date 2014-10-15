@@ -18,8 +18,8 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
+        <td><%= product.name.capitalize %></td>
+        <td><%= product.description.capitalize %></td>
         <td><%= product.price %></td>
         
         <td><%= link_to 'Show', admin_product_path(product.id) %></td>

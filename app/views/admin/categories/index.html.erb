@@ -12,7 +12,7 @@
     <% @categories.each do |categorie| %>
 
       <tr>
-        <td><%= categorie.name %></td>
+        <td><%= categorie.name.capitalize %></td>
      
         <td><%= link_to 'Show',  admin_category_path(categorie.id) %></td>
         <td><%= link_to 'Edit', edit_admin_category_path(categorie.id) %></td>

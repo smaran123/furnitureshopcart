@@ -1,11 +1,11 @@
 <p>
   <strong>Name:</strong>
-  <%= @product.name %>
+  <%= @product.name.capitalize %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @product.description %>
+  <%= @product.description.capitalize %>
 </p>
 
 <p>
@@ -14,17 +14,25 @@
 </p>
 <p>
 <strong>Category:</strong>
-<%= @product.category.name %>
+<%= @product.category.name.capitalize %>
 </p>
 
-
-<% for image in @product.images %>
-<p><%= image_tag image.avatar.url(:small) %>
-</p>
+<table>
+  <%  @product.images.in_groups_of(3).each do |image| %>
+    <tr>
+      <%image.each do |img|%>
+        <% if img.try(:avatar).present? %>
+          <td>
+            <%= image_tag img.avatar.url(:small),:style=>"width:300px;height:300px;" %>
+          </td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        <%end%>
+      <%end%>
+    </tr>
   <% end %>
-
-
-
-
+</table>
+<br><br><br><br><br><br>
 
 <%= link_to 'Back', admin_products_path, class: "btn btn-primary"%>
