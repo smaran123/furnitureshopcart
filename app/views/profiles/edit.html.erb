@@ -1,0 +1,39 @@
+<%= form_for @user, :url =>  update_profile_profile_path(@user), :method=>:put do |f| %>
+  <table width="100%;" style="background: #F1F1F1;">
+    <tr style="border-bottom: 1px solid #CCC; text-align: left; background: #CCC;">
+    </tr>
+
+    
+    <tr>
+      <td>
+        <%=f.label :FirstName%>
+        <%=f.text_field :first_name%>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <%=f.label :LastName%>
+        <%=f.text_field :last_name%>
+      </td>
+    </tr>
+
+  <tr>
+      <td>
+        <%=f.label :Age%>
+        <%=f.text_field :age%>
+      </td>
+    </tr>
+
+
+
+
+
+    <tr>
+      <td><%= f.submit "Save", :class => "btn btn-success", :style => "padding: 5px 20px;" %></td>
+    </tr>
+
+  </table>
+
+<% end %>
+

@@ -17,7 +17,6 @@
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
     
-
     <%= javascript_include_tag "application" %>
   </head>
 
@@ -28,6 +27,9 @@
   <% if current_admin %>
     <%= render :partial => "layouts/header" %>
   <% end %>
+  <%if current_user%>
+  <%= render :partial => "layouts/user" %>
+  <%end%>
      <section>
       <div class="container">
         <%#= render :partial => "/layouts/notice" %>

@@ -7,6 +7,7 @@ gem 'rails', '4.0.0'
 group :production do
   gem 'pg'
 end
+
 gem 'mysql2'
 
 # Use SCSS for stylesheets
