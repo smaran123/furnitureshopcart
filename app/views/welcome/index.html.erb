@@ -1,2 +1,19 @@
 <h1>User Home Page</h1>
-<%=@user.all%>
+
+<table class=" table table-striped">
+  <tr>
+    <th> FirstName   </th>
+    <th> LastName   </th>
+    <th> Age  </th>
+    <th> Gender</th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td> <%=user.first_name%>   </td>
+      <td> <%=user.last_name%>  </td>
+      <td> <%=user.age %>  </td>
+      <td> <%=user.gender%> </td> 
+    </tr>
+  <%end%>
+</table>
