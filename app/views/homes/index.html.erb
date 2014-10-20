@@ -7,22 +7,11 @@
 <div id="category1">
   <%= render :partial => "category" %>
 </div>
-<br><br><br><br>
 
-<div id = "aa" >
-  <%= link_to "Sign In", user_session_path, :class => "btn btn-primary btn-lg" %>   
-</div>
-<style>
-  .aa{
-
-    margin-left:38px;  
-  }
-</style>
 
 <script>
   function category1(val){
   var category = val;
-  alert(category);
   $.ajax({
     type: 'GET',
     url: '/homes/category',

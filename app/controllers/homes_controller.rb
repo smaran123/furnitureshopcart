@@ -1,8 +1,7 @@
 class HomesController < ApplicationController
   
   def index
-
-    @categories = Category.all
+  	@categories = Category.where("id = '#{params[:category_id]}'")
   end
   
   def category
