@@ -1,15 +1,36 @@
-<h4>Welcome To Home Page</h4><br><br><br><br>
-<div class="aa">
- <%= link_to "Sign In", user_session_path, :class => "btn btn-primary btn-lg" %> 
-  
-</div>
+<h4>Welcome To Home Page</h4>
 
+<%= form_tag root_path do %>
+  <%= select_tag :category, options_for_select([["Select",""]]+Category.all.map{|a| [a.name, a.id]}), :onchange => "category1(this.value)" %>
+<% end %>
+
+<div id="category1">
+  <%= render :partial => "category" %>
+</div>
+<br><br><br><br>
+
+<div id = "aa" >
+  <%= link_to "Sign In", user_session_path, :class => "btn btn-primary btn-lg" %>   
+</div>
 <style>
-  
   .aa{
-    
-   margin-left:38px;  
+
+    margin-left:38px;  
   }
- 
-  
 </style>
+
+<script>
+  function category1(val){
+  var category = val;
+  alert(category);
+  $.ajax({
+    type: 'GET',
+    url: '/homes/category',
+    dataType: 'Script',
+    data: {
+      category_id: category
+    },
+    success: function(data) {},
+  });
+  }
+</script>

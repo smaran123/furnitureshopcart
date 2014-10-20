@@ -1,26 +1,36 @@
 Furnitureapp::Application.routes.draw do
  
-    devise_for :admins
-    devise_for :users
+  devise_for :admins
+  devise_for :users
   # get "homes/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   namespace :admin do
-   resources :products
-   resources :categories
+    resources :products
+    resources :categories
   end
-  resources :welcome
+  resources :welcome do 
+#    member do
+#      get :category
+#    end
+  end
+  
   # You can have the root of your site routed with "root"
  
   
-    resources :profiles do
+  resources :profiles do
     member do
       put :update_profile
     end
   end
   
-
-     root 'homes#index'
+  resources :homes do
+    collection do
+      get :category
+    end
+  end 
+  
+  root 'homes#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
