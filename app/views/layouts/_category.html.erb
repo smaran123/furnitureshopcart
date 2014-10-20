@@ -24,13 +24,25 @@
   <style>
   body{padding-top: 60px;}
   </style>
-  <% if current_admin %>
-    <%= render :partial => "layouts/header" %>
-  <%elsif current_user%>
-  <%= render :partial => "layouts/user" %>
-  <% else %>
-  <%= render :partial => "layouts/category" %>
-  <%end%>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user.present? %> 
+       
+            
+           <!--  <li>
+              <%= link_to "Profile" %>
+            </li>
+             -->
+            <li>
+             <%=link_to("Log Out", destroy_user_session_path, :method => :delete)%>
+            </li>
+<%else%>
+<%= link_to("SignIn", new_user_registration_path) %>
+          <% end %>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+
+
      <section>
       <div class="container">
         <%#= render :partial => "/layouts/notice" %>
@@ -40,7 +52,7 @@
             Loading <img alt=""  src="/assets/ajax-loader-big.gif"/>
           </di -->
 
-          <%= yield%>
+   
         </div>
       </div>
     </section>
