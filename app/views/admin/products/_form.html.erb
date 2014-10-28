@@ -38,9 +38,11 @@
   <% f.fields_for :images do |builder| %>
     <p>
       <%= builder.label :avatar, "Image File" %>
+      <div>
       <%= builder.file_field :avatar %>
       <br/>
       <%= builder.link_to_remove "Remove", :class =>"btn btn-sm btn-danger" %>
+      </div>
       </p>
     <% end %>
    <br/>

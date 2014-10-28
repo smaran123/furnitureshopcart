@@ -17,6 +17,13 @@
         <td><%= link_to 'Show',  admin_category_path(categorie.id) %></td>
         <td><%= link_to 'Edit', edit_admin_category_path(categorie.id) %></td>
         <td><%= link_to 'Destroy', admin_category_path(categorie.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+        <% if categorie.category_show == true %>
+          <%= link_to 'Hide',category_show_admin_category_path(:id => categorie, :category_show => "false") %>
+        <% else %>
+          <%= link_to 'Display',category_show_admin_category_path(:id => categorie, :category_show => "true") %>
+        <% end %>
+        </td>
         </tr>
     <% end %>
   </tbody>

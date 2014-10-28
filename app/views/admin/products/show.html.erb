@@ -1,4 +1,6 @@
+<% if current_admin  %>
 <%= link_to 'Back', admin_products_path, :class => "pull-right  btn btn-primary" %>
+<% end %>
 <p>
   <strong>Name:</strong>
   <%= @product.name.capitalize %>

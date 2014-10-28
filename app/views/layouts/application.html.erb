@@ -26,10 +26,9 @@
   </style>
   <% if current_admin %>
     <%= render :partial => "layouts/header" %>
-  <%elsif current_user%>
+  <%else current_user%>
   <%= render :partial => "layouts/user" %>
-  <% else %>
-  <%= render :partial => "layouts/category" %>
+  
   <%end%>
      <section>
       <div class="container">

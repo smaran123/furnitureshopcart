@@ -34,14 +34,20 @@ def update
 	end
 end
 
+def category_show
+	@category = Category.find(params[:id])
+	@category.update_attribute(:category_show, params[:category_show])
+	redirect_to admin_categories_path
+	end
+
 def destroy
 	@category = Category.find(params[:id])
 	@category.destroy
 	redirect_to admin_categories_path
 end
 
-	private
-	def category_params
-		params.require(:category).permit(:name , :products_attributes => [:id, :name])
-	end
+private
+def category_params
+	params.require(:category).permit(:name, :category_show , :products_attributes => [:id, :name])
+end
 end

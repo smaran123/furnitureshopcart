@@ -7,7 +7,11 @@ Furnitureapp::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
   namespace :admin do
     resources :products
-    resources :categories
+    resources :categories do
+      member do
+        get :category_show
+      end
+    end
   end
   resources :welcome do 
 #    member do

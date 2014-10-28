@@ -1,31 +1,37 @@
+
 <div class="row-fluid">
   <div class="span12">
     <legend>User Profile Management</legend>
    
+<p>
+   <strong>vistor id:</strong>   
+    <%= @user.id %>
+</p>
 
-    <div >worker id :  <%= @user.id %></div>
+  <p> 
+  <strong>FirstName:</strong>    
+    <%= @user.first_name %>
 
+  </p>
+  <p>
+   <strong>LastName:</strong>   
+    <%=@user.last_name%>
+    </p>
 
-    <div>FirstName:    <%= @user.first_name %></div>
-
-
-    <div >LastName:   <%=@user.last_name%></div>
-
-
-    <div>Email:     <%= @user.email %></div>
-
-
-    <div>Age:   <%=@user.age%></div>
-
+<p>
+    <strong>Email:</strong>     
+    <%= @user.email %>
+</p>
+<p>
+    <strong>Age:</strong>   
+    <%=@user.age%>
+</p>
 
 
 
   </div>
 </div>
 
-
-
-
-
 <%= link_to "Edit", edit_profile_path(@user), :class => "btn btn-primary" %>
 </br>
+<% end %>
