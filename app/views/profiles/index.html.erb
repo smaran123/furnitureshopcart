@@ -1,8 +1,8 @@
 
-<div class="row-fluid">
-  <div class="span12">
-    <legend>User Profile Management</legend>
-   
+<div class="panel panel-primary">
+  <div class="panel-heading">User Profile Management</div>
+   <div class="panel-body">
+    <table class="table">
 <p>
    <strong>vistor id:</strong>   
     <%= @user.id %>
@@ -26,12 +26,15 @@
     <strong>Age:</strong>   
     <%=@user.age%>
 </p>
-
-
+<p>
+<strong>Gender:</strong>
+<%=@user.gender%>
+</p>
+</div>
 
   </div>
 </div>
 
 <%= link_to "Edit", edit_profile_path(@user), :class => "btn btn-primary" %>
-</br>
-<% end %>
+
+<br/>

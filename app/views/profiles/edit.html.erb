@@ -1,39 +1,49 @@
 <%= form_for @user, :url =>  update_profile_profile_path(@user), :method=>:put do |f| %>
-  <table width="100%;" style="background: #F1F1F1;">
-    <tr style="border-bottom: 1px solid #CCC; text-align: left; background: #CCC;">
-    </tr>
+  
+  <!-- <table width="100%;" style="background: #F1F1F1;"> -->
+    <!-- <tr style="border-bottom: 1px solid #CCC; text-align: left; background: #CCC;"> -->
+    <!-- </tr> -->
 
-    
+   <div class="panel panel-primary">
+   <div class="panel-heading">Edit User Profile Management</div>
+   <div class="panel-body">
+   
     <tr>
       <td>
+      <div class="form-group">
+      <div class="col-sm-1">
         <%=f.label :FirstName%>
+        </div>
         <%=f.text_field :first_name%>
+        </div>
       </td>
     </tr>
 
     <tr>
       <td>
+      <div class="form-group">
+      <div class="col-sm-1">
         <%=f.label :LastName%>
+        </div>
         <%=f.text_field :last_name%>
+        </div>
       </td>
     </tr>
 
   <tr>
       <td>
+      <div class="form-group">
+      <div class="col-sm-1">
         <%=f.label :Age%>
+        </div>
         <%=f.text_field :age%>
+        </div>
       </td>
     </tr>
-
-
-
-
-
     <tr>
       <td><%= f.submit "Save", :class => "btn btn-success", :style => "padding: 5px 20px;" %></td>
     </tr>
-
-  </table>
-
+</div>
+</div>
 <% end %>
 
