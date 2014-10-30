@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-#  before_filter :authenticate_admin!
+ before_filter :authenticate_admin!
   def new 
     @product = Product.new
     
@@ -31,6 +31,8 @@ class Admin::ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @product.images.destroy
+    @product.images.clear
 
   end
 

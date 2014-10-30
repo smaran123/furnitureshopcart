@@ -27,7 +27,7 @@
 
           <ul class="dropdown-menu" role="menu">
 <% Product.where("category_id = #{cat.id}").each do |product| %>
-        <li><%= link_to product.name, admin_product_path(product)%></li>
+        <li><%= link_to product.name, home_path(product)%></li>
     <% end %>
         </ul>     
      

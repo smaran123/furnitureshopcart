@@ -1,4 +1,4 @@
-class Product < ActiveRecord::Base
+	class Product < ActiveRecord::Base
 	has_many :images, :dependent => :destroy
 	belongs_to :category
 	validates :name, :description, :price, :category, presence: true 
