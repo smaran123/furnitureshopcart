@@ -6,7 +6,11 @@ Furnitureapp::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   namespace :admin do
-    resources :products
+    resources :products do
+      member do
+        delete :delete_img
+      end
+    end
     resources :categories do
       member do
         get :category_show

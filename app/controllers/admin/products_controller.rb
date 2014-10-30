@@ -53,6 +53,14 @@ class Admin::ProductsController < ApplicationController
   	redirect_to admin_products_path
   end
 
+  def delete_img
+    @product = Product.find(params[:product_id])
+    @image = @product.images.find(params[:id])
+    if @image.destroy
+      redirect_to admin_products_path
+    end
+  end
+
 	private
   def product_params
     params.require(:product).permit(:name, :description, :price, :category_id, :images_attributes => [:id, :product_id, :avatar, :_destroy])
