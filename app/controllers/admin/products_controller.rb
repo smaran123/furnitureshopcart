@@ -23,6 +23,8 @@ class Admin::ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+     
+
   end
 
   def index
@@ -57,7 +59,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:product_id])
     @image = @product.images.find(params[:id])
     if @image.destroy
-      redirect_to admin_products_path
+      redirect_to admin_product_path(@product)
     end
   end
 

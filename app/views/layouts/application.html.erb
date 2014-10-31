@@ -24,11 +24,11 @@
   <style>
   body{padding-top: 60px;}
   </style>
+
   <% if current_admin %>
-    <%= render :partial => "layouts/header" %>
+  <%= render :partial => "layouts/header" %>
   <%else current_user%>
   <%= render :partial => "layouts/user" %>
-  
   <%end%>
      <section>
       <div class="container">

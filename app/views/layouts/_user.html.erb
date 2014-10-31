@@ -18,19 +18,20 @@
    <ul class="nav navbar-nav navbar-right">
   
 <% Category.where("name is not null and category_show = #{true}").each do |cat| %>
-      <li class="dropdown">
+       <!-- <li class="dropdown">  -->
 
-          <a class="dropdown-toggle" data-toggle="dropdown">
-        <%= cat.name %>
-        </a>
-
-
-          <ul class="dropdown-menu" role="menu">
-<% Product.where("category_id = #{cat.id}").each do |product| %>
-        <li><%= link_to product.name, home_path(product)%></li>
-    <% end %>
-        </ul>     
-     
+          <!-- <a class="dropdown-toggle" data-toggle="dropdown"> -->
+        <li><%= link_to cat.name,home_path(cat)%></li>
+         <!-- </a>   
+ 
+         <ul class="dropdown-menu" role="menu">
+          
+        <% Product.where("category_id = #{cat.id}").each do |product| %>
+        <li><%= link_to product.name, welcome_path(product)%></li>
+    <% end %> 
+          
+        </ul>
+        -->     
      </li>
      <% end %>
 
@@ -46,6 +47,9 @@
             </li>
           <% end %>
           <% if !current_user%>
+          <li>
+          <%= link_to("Home",homes_path)%>
+          </li>
           <li>
           <%= link_to("Sign up", new_user_registration_path)%>
           </li>

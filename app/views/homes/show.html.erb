@@ -1,25 +1,26 @@
- 
+<%= render :partial => "layouts/slider"%>
+<% @products.each do |p| %> 
 <p>
   <strong>Name:</strong>
-  <%= @product.name.capitalize %>
+  <%= p.name.capitalize %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @product.description.capitalize %>
+  <%= p.description.capitalize %>
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @product.price %>
+  <%= p.price %>
 </p>
 <p>
 <strong>Category:</strong>
-<%= @product.category.name.capitalize %>
+<%= p.category.name.capitalize %>
 </p>
 
 <table>
-  <%  @product.images.in_groups_of(3).each do |image| %>
+  <%  p.images.in_groups_of(3).each do |image| %>
     <tr>
       <%image.each do |img|%>
         <% if img.try(:avatar).present? %>
@@ -34,3 +35,5 @@
     </tr>
   <% end %>
 </table>
+
+ <% end %>
