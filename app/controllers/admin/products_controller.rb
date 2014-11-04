@@ -33,8 +33,8 @@ class Admin::ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @product.images.destroy
-    @product.images.clear
+    # @product.images.destroy
+    # @product.images.clear
 
   end
 
@@ -61,6 +61,13 @@ class Admin::ProductsController < ApplicationController
     if @image.destroy
       redirect_to admin_product_path(@product)
     end
+  end
+  
+  def image_show
+    @product = Product.find(params[:id])
+    @image = @product.images.find(params[:image_id])
+    @image.update_attributes(:image_show => params[:image_show])
+    redirect_to admin_product_path(@product)
   end
 
 	private

@@ -9,6 +9,7 @@ Furnitureapp::Application.routes.draw do
     resources :products do
       member do
         delete :delete_img
+        put :image_show
       end
     end
     resources :categories do
