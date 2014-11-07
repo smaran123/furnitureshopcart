@@ -29,6 +29,7 @@ class Admin::ProductsController < ApplicationController
 
   def index
       @products = Product.all
+
   end
 
   def edit
@@ -69,6 +70,8 @@ class Admin::ProductsController < ApplicationController
     @image.update_attributes(:image_show => params[:image_show])
     redirect_to admin_product_path(@product)
   end
+  
+ 
 
 	private
   def product_params
