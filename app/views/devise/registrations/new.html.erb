@@ -16,15 +16,15 @@
 	  <div class="form-group">
     <div class="col-sm-1">
     <%= f.label :email %>
-    </div>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  <%= f.email_field :email, autofocus: true %>
     </div>
 
-	  <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %>
+	  <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters min)</i><% end %>
 	    <%= f.password_field :password, autocomplete: "off" %></div>
 
 	  <div class="form-group">
-     <%= f.label :password_confirmation %>
+     <%= f.label :password_confirmation %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	    <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>       
 <div class="form-group">
@@ -48,7 +48,7 @@
     <div class="col-sm-2">
     <%=f.text_field :age,{class: "form-control"}%>
   </div>
-  </div>
+  </div><br><br>
         
        <div class="form-group">
    <div class="col-sm-2">
@@ -58,7 +58,7 @@
     <%= f.select :gender, options_for_select(%w[Male Female]), {},{class: "form-control"} %>
     </div>
     </div>
-
+  <br>
 
 	  <div class="form-group">
     <%= f.submit "Sign up" %>
