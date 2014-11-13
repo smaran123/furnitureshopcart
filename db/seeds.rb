@@ -5,5 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-admin = Admin.new(:email => 'admin@gmail.com', :password => '123123123', :password_confirmation => '123123123')
-admin.save(:validate => false)
+ Admin.create(:email => 'admin@gmail.com', :password => '123123123', :password_confirmation => '123123123')
+
+OrderStatus.delete_all
+OrderStatus.create! id: 1, name: "In Progress"
+OrderStatus.create! id: 2, name: "Placed"
+OrderStatus.create! id: 3, name: "Shipped"
+OrderStatus.create! id: 4, name: "Cancelled"

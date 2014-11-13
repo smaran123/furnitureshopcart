@@ -1,5 +1,9 @@
 Furnitureapp::Application.routes.draw do
  
+#  get "order_items/create"
+#  get "order_items/update"
+#  get "order_items/destroy"
+#  get "carts/show"
   devise_for :admins
   devise_for :users
   # get "homes/index"
@@ -25,7 +29,10 @@ Furnitureapp::Application.routes.draw do
   end
   
   # You can have the root of your site routed with "root"
- 
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
+  
+
   
   resources :profiles do
     member do

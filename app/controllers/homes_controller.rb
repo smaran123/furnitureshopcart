@@ -10,11 +10,12 @@ class HomesController < ApplicationController
   def show
      @category = Category.find(params[:id])    
      @products = @category.products
+    @order_item = current_order.order_items.new
    end
+   
  private
   def product_params
     params.require(:product).permit(:name, :description, :price, :category_id, :images_attributes => [:id, :product_id, :avatar, :_destroy])
   end
+  
   end   
- # end
-# end
